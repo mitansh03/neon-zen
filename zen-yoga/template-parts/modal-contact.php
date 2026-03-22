@@ -44,5 +44,9 @@
 				<?php esc_html_e( 'Request Access', 'zen-yoga' ); ?>
 			</button>
 		</form>
+
+		<button class="modal__dismiss" data-modal-close>
+			<?php esc_html_e( 'No thanks, let me explore first', 'zen-yoga' ); ?>
+		</button>
 	</div>
 </div>

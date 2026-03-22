@@ -517,6 +517,27 @@
 	margin-bottom: 0;
 }
 
+.modal__dismiss {
+	display: block;
+	width: 100%;
+	margin-top: var(--zen-space-sm);
+	padding: 0.75rem;
+	background: none;
+	border: none;
+	color: var(--zen-color-gray);
+	font-family: var(--zen-font-body);
+	font-size: var(--zen-font-size-sm);
+	cursor: pointer;
+	text-align: center;
+	transition: color var(--zen-transition);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.modal__dismiss:hover {
+	color: var(--zen-color-white);
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
 	background-color: var(--zen-color-dark-alt);
