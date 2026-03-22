@@ -1,0 +1,52 @@
+/* ==========================================================================
+   CSS Custom Properties — Neon Zen
+   Extracted from Google Stitch design.
+   ========================================================================== */
+
+:root {
+	/* Colors */
+	--zen-color-neon: #CCFF00;
+	--zen-color-neon-hover: #B8E600;
+	--zen-color-dark: #0A0A0A;
+	--zen-color-dark-alt: #0D0D0D;
+	--zen-color-dark-card: #141414;
+	--zen-color-white: #FFFFFF;
+	--zen-color-gray: #AAAAAA;
+	--zen-color-gray-light: #CCCCCC;
+	--zen-color-border: rgba(255, 255, 255, 0.1);
+	--zen-color-whatsapp: #25D366;
+
+	/* Typography */
+	--zen-font-heading: 'Anton', 'Impact', 'Arial Black', sans-serif;
+	--zen-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+	--zen-font-size-base: 1rem;
+	--zen-font-size-sm: 0.875rem;
+	--zen-font-size-xs: 0.75rem;
+	--zen-font-size-lg: 1.125rem;
+	--zen-font-size-xl: 1.25rem;
+	--zen-font-size-2xl: 1.75rem;
+	--zen-font-size-3xl: clamp(2rem, 5vw, 3rem);
+	--zen-font-size-hero: clamp(3rem, 10vw, 5.5rem);
+
+	/* Spacing */
+	--zen-space-xs: 0.5rem;
+	--zen-space-sm: 1rem;
+	--zen-space-md: 2rem;
+	--zen-space-lg: 4rem;
+	--zen-space-xl: 6rem;
+	--zen-space-section: clamp(4rem, 8vw, 8rem);
+
+	/* Layout */
+	--zen-max-width: 1200px;
+	--zen-header-height: 64px;
+
+	/* Transitions */
+	--zen-transition: 300ms ease;
+	--zen-transition-slow: 600ms ease;
+
+	/* Border radius */
+	--zen-radius-sm: 4px;
+	--zen-radius-md: 8px;
+	--zen-radius-lg: 50px;
+	--zen-radius-full: 9999px;
+}

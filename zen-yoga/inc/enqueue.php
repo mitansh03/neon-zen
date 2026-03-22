@@ -19,5 +19,6 @@ function zen_enqueue_assets() {
 	wp_enqueue_script( 'zen-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), $version, true );
 	wp_enqueue_script( 'zen-smooth-scroll', get_template_directory_uri() . '/assets/js/smooth-scroll.js', array(), $version, true );
 	wp_enqueue_script( 'zen-animations', get_template_directory_uri() . '/assets/js/animations.js', array(), $version, true );
+	wp_enqueue_script( 'zen-modal', get_template_directory_uri() . '/assets/js/modal.js', array(), $version, true );
 }
 add_action( 'wp_enqueue_scripts', 'zen_enqueue_assets' );

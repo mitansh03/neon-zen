@@ -25,8 +25,8 @@
 			<?php esc_html_e( 'Step into a realm where ancient discipline meets futuristic energy. High-intensity Vinyasa fueled by immersive electronic soundscapes.', 'zen-yoga' ); ?>
 		</p>
 		<div class="hero__actions">
-			<a href="#contact" class="btn btn--primary"><?php esc_html_e( 'Start Your Journey', 'zen-yoga' ); ?></a>
-			<a href="#schedule" class="btn btn--outline"><?php esc_html_e( 'View Schedule', 'zen-yoga' ); ?></a>
+			<a href="#contact-modal" class="btn btn--primary" data-modal-open><?php esc_html_e( 'Start Your Journey', 'zen-yoga' ); ?></a>
+			<a href="#classes" class="btn btn--outline"><?php esc_html_e( 'View Schedule', 'zen-yoga' ); ?></a>
 		</div>
 	</div>
 </section>

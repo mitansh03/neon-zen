@@ -36,6 +36,6 @@
 			</ul>
 		</nav>
 
-		<a href="#contact" class="btn btn--primary site-header__cta"><?php esc_html_e( 'Book Now', 'zen-yoga' ); ?></a>
+		<a href="#contact-modal" class="btn btn--primary site-header__cta" data-modal-open><?php esc_html_e( 'Book Now', 'zen-yoga' ); ?></a>
 	</div>
 </header>

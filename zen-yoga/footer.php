@@ -61,6 +61,8 @@
 	</div>
 </footer>
 
+<?php get_template_part( 'template-parts/modal', 'contact' ); ?>
+
 <!-- WhatsApp floating button -->
 <a href="https://wa.me/91XXXXXXXXXX?text=<?php echo rawurlencode( 'Hi, I\'d like to know about yoga classes at Neon Zen.' ); ?>"
    class="whatsapp-float"
