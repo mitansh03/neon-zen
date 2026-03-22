@@ -1,0 +1,549 @@
+/* ==========================================================================
+   Section Styles — Neon Zen
+   ========================================================================== */
+
+/* ---------- Header / Navigation ---------- */
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: var(--zen-header-height);
+	z-index: 100;
+	background-color: rgba(10, 10, 10, 0.9);
+	backdrop-filter: blur(8px);
+}
+
+.site-header__inner {
+	max-width: var(--zen-max-width);
+	margin-inline: auto;
+	padding-inline: var(--zen-space-sm);
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.site-header__logo {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	text-decoration: none;
+}
+
+.site-header__bolt {
+	font-size: 1.4rem;
+	color: var(--zen-color-neon);
+}
+
+.site-header__brand-name {
+	font-family: var(--zen-font-heading);
+	font-size: var(--zen-font-size-xl);
+	font-weight: 700;
+	color: var(--zen-color-white);
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+}
+
+.site-header__logo:hover .site-header__brand-name {
+	color: var(--zen-color-neon);
+}
+
+.site-header__menu-toggle {
+	display: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem;
+}
+
+.hamburger {
+	display: block;
+	width: 24px;
+	height: 2px;
+	background-color: var(--zen-color-white);
+	position: relative;
+	transition: background-color var(--zen-transition);
+}
+
+.hamburger::before,
+.hamburger::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--zen-color-white);
+	transition: transform var(--zen-transition);
+}
+
+.hamburger::before { top: -7px; }
+.hamburger::after { top: 7px; }
+
+.site-header__nav-list {
+	display: flex;
+	gap: var(--zen-space-md);
+}
+
+.site-header__nav-list a {
+	color: var(--zen-color-gray-light);
+	font-size: var(--zen-font-size-sm);
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	text-decoration: none;
+}
+
+.site-header__nav-list a:hover {
+	color: var(--zen-color-neon);
+}
+
+.site-header__cta {
+	padding: 0.6rem 1.5rem;
+	font-size: var(--zen-font-size-sm);
+	border-radius: var(--zen-radius-md);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	align-items: flex-end;
+	padding-top: var(--zen-header-height);
+	padding-bottom: var(--zen-space-xl);
+	overflow: hidden;
+}
+
+.hero__bg {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+}
+
+.hero__bg-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
+}
+
+.hero__overlay {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background: linear-gradient(
+		to bottom,
+		rgba(10, 10, 10, 0.3) 0%,
+		rgba(10, 10, 10, 0.6) 40%,
+		rgba(10, 10, 10, 0.9) 75%,
+		rgba(10, 10, 10, 1) 100%
+	);
+}
+
+.hero__inner {
+	position: relative;
+	z-index: 2;
+}
+
+.hero__heading {
+	font-size: var(--zen-font-size-hero);
+	line-height: 0.95;
+	margin-bottom: var(--zen-space-md);
+	max-width: 600px;
+}
+
+.hero__text {
+	font-size: var(--zen-font-size-base);
+	color: var(--zen-color-gray-light);
+	max-width: 420px;
+	line-height: 1.7;
+	margin-bottom: var(--zen-space-md);
+}
+
+.hero__actions {
+	display: flex;
+	flex-direction: column;
+	gap: var(--zen-space-sm);
+	align-items: flex-start;
+}
+
+.hero__actions .btn {
+	min-width: 240px;
+	justify-content: center;
+}
+
+/* ---------- About ---------- */
+.about {
+	background-color: var(--zen-color-dark);
+}
+
+.about__image {
+	border-radius: var(--zen-radius-md);
+	overflow: hidden;
+	margin-bottom: var(--zen-space-lg);
+}
+
+.about__image img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.about__content {
+	margin-bottom: var(--zen-space-lg);
+}
+
+.about__heading {
+	font-size: var(--zen-font-size-3xl);
+	margin-bottom: var(--zen-space-sm);
+}
+
+.about__text {
+	font-size: var(--zen-font-size-base);
+	color: var(--zen-color-gray-light);
+	line-height: 1.7;
+	max-width: 600px;
+}
+
+.about__features {
+	display: flex;
+	flex-direction: column;
+	gap: var(--zen-space-sm);
+}
+
+.about__card {
+	display: flex;
+	gap: var(--zen-space-sm);
+	background-color: var(--zen-color-dark-card);
+	border: 1px solid var(--zen-color-border);
+	border-radius: var(--zen-radius-md);
+	padding: var(--zen-space-md);
+}
+
+.about__card-icon {
+	font-size: 1.5rem;
+	flex-shrink: 0;
+	width: 2rem;
+	text-align: center;
+}
+
+.about__card-title {
+	font-family: var(--zen-font-heading);
+	font-size: var(--zen-font-size-lg);
+	font-style: normal;
+	text-transform: uppercase;
+	color: var(--zen-color-white);
+	margin-bottom: var(--zen-space-xs);
+}
+
+.about__card-text {
+	font-size: var(--zen-font-size-sm);
+	color: var(--zen-color-gray);
+	line-height: 1.6;
+	margin-bottom: 0;
+}
+
+/* ---------- Classes ---------- */
+.classes {
+	background-color: var(--zen-color-dark);
+	text-align: center;
+}
+
+.classes__grid {
+	display: flex;
+	flex-direction: column;
+	gap: var(--zen-space-sm);
+}
+
+.classes__card {
+	position: relative;
+	border-radius: var(--zen-radius-md);
+	overflow: hidden;
+	aspect-ratio: 3 / 4;
+}
+
+.classes__card-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform var(--zen-transition-slow);
+}
+
+.classes__card:hover .classes__card-img {
+	transform: scale(1.05);
+}
+
+.classes__card-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		to bottom,
+		transparent 40%,
+		rgba(10, 10, 10, 0.7) 75%,
+		rgba(10, 10, 10, 0.9) 100%
+	);
+}
+
+.classes__card-content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: var(--zen-space-md);
+	text-align: left;
+	z-index: 1;
+}
+
+.classes__card-label {
+	display: inline-block;
+	font-family: var(--zen-font-body);
+	font-size: var(--zen-font-size-xs);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	color: var(--zen-color-neon);
+	margin-bottom: 0.25rem;
+}
+
+.classes__card-title {
+	font-size: var(--zen-font-size-2xl);
+	color: var(--zen-color-white);
+	line-height: 1.1;
+}
+
+/* ---------- Schedule ---------- */
+/* Styles to be added from Stitch design */
+
+/* ---------- Testimonials ---------- */
+/* Styles to be added from Stitch design */
+
+/* ---------- Contact ---------- */
+.contact {
+	background-color: var(--zen-color-dark);
+}
+
+/* Neon info card */
+.contact__info-card {
+	background-color: var(--zen-color-neon);
+	border-radius: var(--zen-radius-md);
+	padding: var(--zen-space-md);
+	margin-bottom: var(--zen-space-md);
+}
+
+.contact__heading {
+	color: var(--zen-color-dark);
+	font-size: var(--zen-font-size-3xl);
+	margin-bottom: var(--zen-space-sm);
+}
+
+.contact__text {
+	color: var(--zen-color-dark);
+	font-size: var(--zen-font-size-base);
+	line-height: 1.6;
+	margin-bottom: var(--zen-space-md);
+	max-width: 400px;
+}
+
+.contact__details {
+	display: flex;
+	flex-direction: column;
+	gap: var(--zen-space-sm);
+}
+
+.contact__detail {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+	color: var(--zen-color-dark);
+	font-size: var(--zen-font-size-sm);
+	font-weight: 500;
+}
+
+.contact__detail a {
+	color: var(--zen-color-dark);
+	text-decoration: none;
+}
+
+.contact__detail a:hover {
+	text-decoration: underline;
+}
+
+.contact__icon {
+	flex-shrink: 0;
+	margin-top: 0.1rem;
+}
+
+/* Form */
+.contact__form-wrap {
+	padding-top: var(--zen-space-sm);
+}
+
+.contact__form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--zen-space-md);
+}
+
+.contact__field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.contact__label {
+	font-family: var(--zen-font-body);
+	font-size: var(--zen-font-size-xs);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--zen-color-gray);
+}
+
+.contact__input {
+	background-color: var(--zen-color-dark-card);
+	border: 1px solid var(--zen-color-border);
+	border-radius: var(--zen-radius-md);
+	padding: 1rem 1.25rem;
+	font-family: var(--zen-font-body);
+	font-size: var(--zen-font-size-base);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--zen-color-white);
+	transition: border-color var(--zen-transition);
+	width: 100%;
+}
+
+.contact__input::placeholder {
+	color: var(--zen-color-gray);
+}
+
+.contact__input:focus {
+	outline: none;
+	border-color: var(--zen-color-neon);
+}
+
+.contact__select {
+	appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23AAAAAA' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 1.25rem center;
+	padding-right: 3rem;
+	cursor: pointer;
+}
+
+.contact__select option {
+	background-color: var(--zen-color-dark-card);
+	color: var(--zen-color-white);
+}
+
+.contact__submit {
+	align-self: flex-start;
+	min-width: 240px;
+	margin-top: var(--zen-space-xs);
+}
+
+/* ---------- CTA ---------- */
+/* Styles to be added from Stitch design */
+
+/* ---------- Footer ---------- */
+.site-footer {
+	background-color: var(--zen-color-dark-alt);
+	color: var(--zen-color-white);
+	padding-block: var(--zen-space-xl);
+	border-top: 1px solid var(--zen-color-border);
+}
+
+.site-footer__inner {
+	max-width: var(--zen-max-width);
+	margin-inline: auto;
+	padding-inline: var(--zen-space-sm);
+	display: flex;
+	flex-direction: column;
+	gap: var(--zen-space-lg);
+}
+
+/* Logo in footer */
+.site-footer__logo {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin-bottom: var(--zen-space-sm);
+}
+
+.site-footer__bolt {
+	font-size: 1.4rem;
+	color: var(--zen-color-neon);
+}
+
+.site-footer__name {
+	font-family: var(--zen-font-heading);
+	font-size: var(--zen-font-size-xl);
+	font-weight: 700;
+	text-transform: uppercase;
+	color: var(--zen-color-white);
+}
+
+.site-footer__tagline {
+	color: var(--zen-color-gray);
+	font-size: var(--zen-font-size-sm);
+	line-height: 1.6;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	max-width: 360px;
+	margin-bottom: var(--zen-space-sm);
+}
+
+.site-footer__copy {
+	font-size: var(--zen-font-size-sm);
+	color: var(--zen-color-neon);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+
+/* Footer columns */
+.site-footer__col {
+	/* Column spacing handled by parent gap */
+}
+
+.site-footer__heading {
+	font-family: var(--zen-font-heading);
+	font-size: var(--zen-font-size-base);
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--zen-color-white);
+	margin-bottom: var(--zen-space-sm);
+}
+
+.site-footer__text {
+	color: var(--zen-color-gray);
+	font-size: var(--zen-font-size-sm);
+	margin-bottom: var(--zen-space-xs);
+}
+
+.site-footer__text a {
+	color: var(--zen-color-gray);
+	text-decoration: none;
+}
+
+.site-footer__text a:hover {
+	color: var(--zen-color-neon);
+}
+
+/* Social icons */
+.site-footer__social {
+	display: flex;
+	gap: var(--zen-space-sm);
+	margin-top: var(--zen-space-sm);
+}
+
+.site-footer__social-link {
+	color: var(--zen-color-gray);
+	transition: color var(--zen-transition);
+}
+
+.site-footer__social-link:hover {
+	color: var(--zen-color-neon);
+}

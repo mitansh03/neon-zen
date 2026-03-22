@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# WordPress uploads (managed on server, not in git)
+wp-content/uploads/
+
+# Build artifacts
+*.zip
+
+# Claude Code
+.claude/

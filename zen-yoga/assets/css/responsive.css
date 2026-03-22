@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Responsive — Mobile-first media queries — Neon Zen
+   ========================================================================== */
+
+/* ---------- Mobile menu (below 768px) ---------- */
+@media (max-width: 767px) {
+	.site-header__menu-toggle {
+		display: block;
+		order: 2;
+	}
+
+	.site-header__cta {
+		order: 1;
+	}
+
+	.site-header__nav {
+		position: fixed;
+		top: var(--zen-header-height);
+		right: -100%;
+		width: 280px;
+		height: calc(100vh - var(--zen-header-height));
+		background-color: var(--zen-color-dark-alt);
+		box-shadow: -4px 0 12px rgba(0, 0, 0, 0.5);
+		transition: right var(--zen-transition);
+		overflow-y: auto;
+	}
+
+	.site-header__nav.is-open {
+		right: 0;
+	}
+
+	.site-header__nav-list {
+		flex-direction: column;
+		padding: var(--zen-space-md);
+		gap: var(--zen-space-sm);
+	}
+
+	.site-header__nav-list a {
+		font-size: var(--zen-font-size-base);
+		padding-block: var(--zen-space-xs);
+		display: block;
+	}
+
+	/* Hamburger → X animation */
+	.site-header__menu-toggle[aria-expanded="true"] .hamburger {
+		background-color: transparent;
+	}
+
+	.site-header__menu-toggle[aria-expanded="true"] .hamburger::before {
+		transform: rotate(45deg) translate(5px, 5px);
+	}
+
+	.site-header__menu-toggle[aria-expanded="true"] .hamburger::after {
+		transform: rotate(-45deg) translate(5px, -5px);
+	}
+
+	/* Hero mobile — in the screenshot the nav items are hidden, only BOOK NOW shows */
+	.site-header__nav {
+		display: none;
+	}
+
+	.site-header__nav.is-open {
+		display: block;
+		right: 0;
+	}
+}
+
+/* ---------- Tablet (768px+) ---------- */
+@media (min-width: 768px) {
+	.container {
+		padding-inline: var(--zen-space-md);
+	}
+
+	.hero__actions {
+		flex-direction: row;
+	}
+
+	.hero__heading {
+		max-width: 700px;
+	}
+
+	.hero__text {
+		max-width: 500px;
+		font-size: var(--zen-font-size-lg);
+	}
+
+	/* Classes — 2 columns on tablet */
+	.classes__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--zen-space-sm);
+	}
+
+	.site-footer__inner {
+		padding-inline: var(--zen-space-md);
+	}
+}
+
+/* ---------- Desktop (1024px+) ---------- */
+@media (min-width: 1024px) {
+	.hero {
+		align-items: center;
+		padding-bottom: 0;
+	}
+
+	.hero__inner {
+		padding-block: var(--zen-space-xl);
+	}
+
+	/* About — side-by-side cards on desktop */
+	.about__features {
+		flex-direction: row;
+	}
+
+	.about__features .about__card {
+		flex: 1;
+	}
+
+	/* Footer — 3 columns on desktop */
+	.site-footer__inner {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.site-footer__brand {
+		flex: 1.5;
+	}
+
+	.site-footer__col {
+		flex: 1;
+	}
+
+	/* Contact — info card and form side by side */
+	.contact .container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--zen-space-md);
+		align-items: start;
+	}
+
+	.contact__info-card {
+		margin-bottom: 0;
+		padding: var(--zen-space-lg);
+	}
+
+	.contact__form-wrap {
+		padding-top: 0;
+	}
+}
+
+/* ---------- Wide (1280px+) ---------- */
+@media (min-width: 1280px) {
+	/* Wide screen adjustments */
+}
