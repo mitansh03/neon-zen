@@ -9,7 +9,7 @@
 <section class="section contact" id="contact">
 	<div class="container">
 		<!-- Neon green info card -->
-		<div class="contact__info-card reveal">
+		<div class="contact__info-card reveal reveal--left">
 			<h2 class="contact__heading"><?php esc_html_e( 'Ready To Plug In?', 'zen-yoga' ); ?></h2>
 			<p class="contact__text">
 				<?php esc_html_e( 'Join the waitlist for our next high-voltage session. First class is on us.', 'zen-yoga' ); ?>
@@ -27,7 +27,7 @@
 		</div>
 
 		<!-- Lead gen form -->
-		<div class="contact__form-wrap reveal">
+		<div class="contact__form-wrap reveal reveal--right">
 			<form class="contact__form" action="#" method="post">
 				<div class="contact__field">
 					<label for="zen-name" class="contact__label"><?php esc_html_e( 'Your Name', 'zen-yoga' ); ?></label>

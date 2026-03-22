@@ -32,6 +32,7 @@
 				<li><a href="#about"><?php esc_html_e( 'About', 'zen-yoga' ); ?></a></li>
 				<li><a href="#classes"><?php esc_html_e( 'Classes', 'zen-yoga' ); ?></a></li>
 				<li><a href="#schedule"><?php esc_html_e( 'Schedule', 'zen-yoga' ); ?></a></li>
+				<li><a href="#testimonials"><?php esc_html_e( 'Reviews', 'zen-yoga' ); ?></a></li>
 				<li><a href="#contact"><?php esc_html_e( 'Contact', 'zen-yoga' ); ?></a></li>
 			</ul>
 		</nav>

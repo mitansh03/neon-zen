@@ -186,14 +186,222 @@ ul, ol {
 	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Scroll reveal animation */
+/* ==========================================================================
+   ANIMATION SYSTEM — Neon Zen
+   ========================================================================== */
+
+/* ---------- Scroll Reveal — Base + Variants ---------- */
 .reveal {
 	opacity: 0;
-	transform: translateY(30px);
-	transition: opacity var(--zen-transition-slow), transform var(--zen-transition-slow);
+	transform: translateY(40px);
+	transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+	            transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal--left {
+	transform: translateX(-60px) translateY(0);
+}
+
+.reveal--right {
+	transform: translateX(60px) translateY(0);
+}
+
+.reveal--scale {
+	transform: scale(0.9) translateY(0);
+}
+
+.reveal--fade {
+	transform: none;
 }
 
 .reveal.is-visible {
 	opacity: 1;
-	transform: translateY(0);
+	transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger children: each sibling .reveal delays slightly more */
+.reveal.is-visible:nth-child(2) { transition-delay: 0.1s; }
+.reveal.is-visible:nth-child(3) { transition-delay: 0.2s; }
+.reveal.is-visible:nth-child(4) { transition-delay: 0.3s; }
+.reveal.is-visible:nth-child(5) { transition-delay: 0.4s; }
+.reveal.is-visible:nth-child(6) { transition-delay: 0.5s; }
+.reveal.is-visible:nth-child(7) { transition-delay: 0.6s; }
+
+/* ---------- Neon Glow Pulse — Reusable ---------- */
+@keyframes neon-glow {
+	0%, 100% { text-shadow: 0 0 8px rgba(204, 255, 0, 0.4); }
+	50% { text-shadow: 0 0 20px rgba(204, 255, 0, 0.7), 0 0 40px rgba(204, 255, 0, 0.3); }
+}
+
+.neon-label {
+	animation: neon-glow 3s ease-in-out infinite;
+}
+
+/* ---------- Neon Flicker — Used on Hero Highlight ---------- */
+@keyframes neon-flicker {
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+		text-shadow: 0 0 8px rgba(204, 255, 0, 0.6),
+		             0 0 20px rgba(204, 255, 0, 0.4),
+		             0 0 40px rgba(204, 255, 0, 0.2);
+		opacity: 1;
+	}
+	20%, 24%, 55% {
+		text-shadow: none;
+		opacity: 0.8;
+	}
+}
+
+.neon-highlight {
+	animation: neon-flicker 4s ease-in-out 1.5s 1;
+}
+
+/* ---------- Button Animations ---------- */
+
+/* Primary button glow on hover */
+.btn--primary {
+	position: relative;
+	overflow: hidden;
+}
+
+.btn--primary::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: var(--zen-radius-full);
+	transform: translate(-50%, -50%);
+	transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn--primary:hover::after {
+	width: 300px;
+	height: 300px;
+}
+
+.btn--primary:hover {
+	box-shadow: 0 0 25px rgba(204, 255, 0, 0.4), 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Outline button neon border glow */
+.btn--outline:hover {
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- Card Hover Effects ---------- */
+.about__card,
+.testimonials__card,
+.schedule__slot {
+	transition: transform var(--zen-transition), border-color var(--zen-transition), box-shadow var(--zen-transition);
+}
+
+.about__card:hover,
+.testimonials__card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(204, 255, 0, 0.05);
+}
+
+/* Classes card — image zoom + neon border flash */
+.classes__card::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border: 2px solid transparent;
+	border-radius: var(--zen-radius-md);
+	transition: border-color 0.4s ease;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.classes__card:hover::after {
+	border-color: rgba(204, 255, 0, 0.4);
+}
+
+.classes__card:hover .classes__card-label {
+	text-shadow: 0 0 10px rgba(204, 255, 0, 0.6);
+}
+
+/* ---------- Section Heading Underline ---------- */
+.section__heading h2::after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 3px;
+	background-color: var(--zen-color-neon);
+	margin: var(--zen-space-sm) auto 0;
+	border-radius: 2px;
+	box-shadow: 0 0 10px rgba(204, 255, 0, 0.4);
+	transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+/* Animate underline width when parent .reveal is visible */
+.reveal.is-visible h2::after,
+.section__heading h2::after {
+	width: 60px;
+}
+
+/* ---------- Header Scroll Effect ---------- */
+.site-header {
+	transition: background-color 0.4s ease, box-shadow 0.4s ease, height 0.4s ease;
+}
+
+.site-header.is-scrolled {
+	background-color: rgba(10, 10, 10, 0.97);
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(204, 255, 0, 0.08);
+}
+
+/* ---------- WhatsApp Button Pulse ---------- */
+@keyframes wa-pulse {
+	0% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(37, 211, 102, 0.4); }
+	70% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 12px rgba(37, 211, 102, 0); }
+	100% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-float {
+	animation: wa-pulse 2.5s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+	animation: none;
+}
+
+/* ---------- Modal Animations ---------- */
+.modal__content {
+	transform: translateY(30px) scale(0.95);
+	transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.modal.is-open .modal__content {
+	transform: translateY(0) scale(1);
+}
+
+/* ---------- Schedule Day Hover ---------- */
+.schedule__day {
+	transition: background-color var(--zen-transition);
+}
+
+.schedule__day:hover {
+	background-color: rgba(204, 255, 0, 0.03);
+}
+
+/* ---------- Respect Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+
+	.reveal {
+		opacity: 1;
+		transform: none;
+	}
+
+	.whatsapp-float {
+		animation: none;
+	}
 }

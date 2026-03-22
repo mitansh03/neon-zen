@@ -8,7 +8,7 @@
 
 <section class="section about" id="about">
 	<div class="container">
-		<div class="about__image reveal">
+		<div class="about__image reveal reveal--scale">
 			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/about-studio.jpg' ); ?>"
 			     alt="<?php esc_attr_e( 'Yoga practitioner meditating in a dimly lit Neon Zen studio', 'zen-yoga' ); ?>"
 			     loading="lazy"
@@ -16,7 +16,7 @@
 			     height="800">
 		</div>
 
-		<div class="about__content reveal">
+		<div class="about__content reveal reveal--left">
 			<h2 class="about__heading">
 				<?php echo wp_kses_post( __( 'Why <span class="neon-highlight">Neon Zen</span>?', 'zen-yoga' ) ); ?>
 			</h2>
