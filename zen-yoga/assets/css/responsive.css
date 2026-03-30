@@ -96,20 +96,6 @@
 		grid-template-columns: 5.5rem 1fr auto;
 	}
 
-	/* Testimonials — 2 columns on tablet */
-	.testimonials__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--zen-space-md);
-	}
-
-	/* Last testimonial spans full width if odd count */
-	.testimonials__card:last-child:nth-child(odd) {
-		grid-column: 1 / -1;
-		max-width: 600px;
-		margin-inline: auto;
-	}
-
 	/* CTA actions row on tablet */
 	.cta__actions {
 		flex-direction: row;
@@ -198,19 +184,7 @@
 		align-self: flex-start;
 	}
 
-	/* Testimonials — 3 columns on desktop */
-	.testimonials__grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
-
-	.testimonials__card:last-child:nth-child(odd) {
-		grid-column: auto;
-		max-width: none;
-	}
-
-	.testimonials__quote {
-		font-size: var(--zen-font-size-base);
-	}
+	/* Testimonials slider → grid handled in base.css @media */
 
 	/* CTA — horizontal layout */
 	.cta__inner {

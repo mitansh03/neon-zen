@@ -41,7 +41,7 @@
 			</ul>
 		</nav>
 
-		<a href="#contact-modal" class="btn btn--primary site-header__cta" data-modal-open>Book Now</a>
+		<a href="#contact-modal" class="btn btn--primary btn--shine site-header__cta" data-modal-open>Book Now</a>
 	</div>
 </header>
 
@@ -74,10 +74,10 @@
 		</div>
 		<div class="container hero__inner">
 			<p class="neon-label">The Electric Sanctuary</p>
-			<h1 class="hero__heading">Ignite Your <span class="neon-highlight">Inner</span> Flow</h1>
+			<h1 class="hero__heading">Ignite Your <span class="neon-highlight word-rotate" data-words="Inner|Electric|Primal|Fearless" data-interval="2500">Inner</span> Flow</h1>
 			<p class="hero__text">Step into a realm where ancient discipline meets futuristic energy. High-intensity Vinyasa fueled by immersive electronic soundscapes.</p>
 			<div class="hero__actions">
-				<a href="#contact-modal" class="btn btn--primary" data-modal-open>Start Your Journey</a>
+				<a href="#contact-modal" class="btn btn--primary btn--shine" data-modal-open>Start Your Journey</a>
 				<a href="#classes" class="btn btn--outline">View Classes</a>
 			</div>
 		</div>
@@ -118,6 +118,37 @@
 		</div>
 	</div>
 
+	<!-- Marquee -->
+	<div class="marquee" aria-hidden="true">
+		<div class="marquee__track">
+			<span class="marquee__item">Electric Vinyasa</span>
+			<span class="marquee__dot">⚡</span>
+			<span class="marquee__item">Immersive Audio</span>
+			<span class="marquee__dot">⚡</span>
+			<span class="marquee__item">Bio-Thermal</span>
+			<span class="marquee__dot">⚡</span>
+			<span class="marquee__item">Restorative Flow</span>
+			<span class="marquee__dot">⚡</span>
+			<span class="marquee__item">Neon Zen Bangalore</span>
+			<span class="marquee__dot">⚡</span>
+			<span class="marquee__item">The Electric Sanctuary</span>
+			<span class="marquee__dot">⚡</span>
+			<!-- Duplicate for seamless loop -->
+			<span class="marquee__item">Electric Vinyasa</span>
+			<span class="marquee__dot">⚡</span>
+			<span class="marquee__item">Immersive Audio</span>
+			<span class="marquee__dot">⚡</span>
+			<span class="marquee__item">Bio-Thermal</span>
+			<span class="marquee__dot">⚡</span>
+			<span class="marquee__item">Restorative Flow</span>
+			<span class="marquee__dot">⚡</span>
+			<span class="marquee__item">Neon Zen Bangalore</span>
+			<span class="marquee__dot">⚡</span>
+			<span class="marquee__item">The Electric Sanctuary</span>
+			<span class="marquee__dot">⚡</span>
+		</div>
+	</div>
+
 	<!-- About -->
 	<section class="section about" id="about">
 		<div class="container">
@@ -137,7 +168,7 @@
 			</div>
 
 			<div class="about__features">
-				<div class="about__card reveal">
+				<div class="about__card spotlight-card reveal">
 					<div class="about__card-icon" aria-hidden="true">
 						<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#CCFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
 					</div>
@@ -146,7 +177,7 @@
 						<p class="about__card-text">High-intensity power yoga synced with rhythmic lighting and electronic soundscapes to induce deep flow states twice as fast as traditional practice.</p>
 					</div>
 				</div>
-				<div class="about__card reveal">
+				<div class="about__card spotlight-card reveal">
 					<div class="about__card-icon" aria-hidden="true">
 						<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#CCFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
 					</div>
@@ -319,51 +350,58 @@
 				<h2>Voices From The Flow</h2>
 			</div>
 
-			<div class="testimonials__grid">
-				<blockquote class="testimonials__card reveal">
-					<div class="testimonials__quote-mark" aria-hidden="true">"</div>
-					<p class="testimonials__quote">I walked in skeptical about "electric yoga." Three months later, I've never been stronger or more centered. The soundscapes alone are worth it.</p>
-					<footer class="testimonials__author">
-						<div class="testimonials__avatar">
-							<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=112&q=80"
-							     alt="Priya Sharma" loading="lazy" width="56" height="56">
-						</div>
-						<div class="testimonials__author-info">
-							<cite class="testimonials__name">Priya Sharma</cite>
-							<span class="testimonials__title">Software Engineer</span>
-						</div>
-					</footer>
-				</blockquote>
+			<div class="testimonials__slider-wrap">
+				<div class="testimonials__slider">
+					<blockquote class="testimonials__card spotlight-card reveal">
+						<div class="testimonials__quote-mark" aria-hidden="true">"</div>
+						<p class="testimonials__quote">I walked in skeptical about "electric yoga." Three months later, I've never been stronger or more centered. The soundscapes alone are worth it.</p>
+						<footer class="testimonials__author">
+							<div class="testimonials__avatar">
+								<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=112&auto=format&q=80"
+								     alt="Priya Sharma" loading="lazy" decoding="async" width="56" height="56">
+							</div>
+							<div class="testimonials__author-info">
+								<cite class="testimonials__name">Priya Sharma</cite>
+								<span class="testimonials__title">Software Engineer</span>
+							</div>
+						</footer>
+					</blockquote>
 
-				<blockquote class="testimonials__card reveal">
-					<div class="testimonials__quote-mark" aria-hidden="true">"</div>
-					<p class="testimonials__quote">Bio-Thermal changed my relationship with heat training. The instructors push you just enough — you leave feeling like you've unlocked something.</p>
-					<footer class="testimonials__author">
-						<div class="testimonials__avatar">
-							<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=112&q=80"
-							     alt="Arjun Mehta" loading="lazy" width="56" height="56">
-						</div>
-						<div class="testimonials__author-info">
-							<cite class="testimonials__name">Arjun Mehta</cite>
-							<span class="testimonials__title">Founder, Pulse Labs</span>
-						</div>
-					</footer>
-				</blockquote>
+					<blockquote class="testimonials__card spotlight-card reveal">
+						<div class="testimonials__quote-mark" aria-hidden="true">"</div>
+						<p class="testimonials__quote">Bio-Thermal changed my relationship with heat training. The instructors push you just enough — you leave feeling like you've unlocked something.</p>
+						<footer class="testimonials__author">
+							<div class="testimonials__avatar">
+								<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=112&auto=format&q=80"
+								     alt="Arjun Mehta" loading="lazy" decoding="async" width="56" height="56">
+							</div>
+							<div class="testimonials__author-info">
+								<cite class="testimonials__name">Arjun Mehta</cite>
+								<span class="testimonials__title">Founder, Pulse Labs</span>
+							</div>
+						</footer>
+					</blockquote>
 
-				<blockquote class="testimonials__card reveal">
-					<div class="testimonials__quote-mark" aria-hidden="true">"</div>
-					<p class="testimonials__quote">The 6 AM Electric Vinyasa is the best hour of my day. Dark room, deep bass, full intensity. Nothing else in Bangalore comes close.</p>
-					<footer class="testimonials__author">
-						<div class="testimonials__avatar">
-							<img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=112&q=80"
-							     alt="Meera Iyer" loading="lazy" width="56" height="56">
-						</div>
-						<div class="testimonials__author-info">
-							<cite class="testimonials__name">Meera Iyer</cite>
-							<span class="testimonials__title">Fitness Coach</span>
-						</div>
-					</footer>
-				</blockquote>
+					<blockquote class="testimonials__card spotlight-card reveal">
+						<div class="testimonials__quote-mark" aria-hidden="true">"</div>
+						<p class="testimonials__quote">The 6 AM Electric Vinyasa is the best hour of my day. Dark room, deep bass, full intensity. Nothing else in Bangalore comes close.</p>
+						<footer class="testimonials__author">
+							<div class="testimonials__avatar">
+								<img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=112&auto=format&q=80"
+								     alt="Meera Iyer" loading="lazy" decoding="async" width="56" height="56">
+							</div>
+							<div class="testimonials__author-info">
+								<cite class="testimonials__name">Meera Iyer</cite>
+								<span class="testimonials__title">Fitness Coach</span>
+							</div>
+						</footer>
+					</blockquote>
+				</div>
+				<div class="slider-dots">
+					<button class="slider-dot slider-dot--active" aria-label="Slide 1"></button>
+					<button class="slider-dot" aria-label="Slide 2"></button>
+					<button class="slider-dot" aria-label="Slide 3"></button>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -421,7 +459,7 @@
 				<p class="cta__text">Your first class is on us. Step into the electric sanctuary and feel the difference.</p>
 			</div>
 			<div class="cta__actions reveal reveal--fade">
-				<a href="#contact-modal" class="btn btn--primary btn--lg" data-modal-open>Book Your Free Class</a>
+				<a href="#contact-modal" class="btn btn--primary btn--shine btn--lg" data-modal-open>Book Your Free Class</a>
 				<a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20book%20my%20first%20class%20at%20Neon%20Zen."
 				   class="btn btn--outline btn--lg" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
 			</div>
