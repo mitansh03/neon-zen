@@ -131,6 +131,11 @@
 		padding-block: var(--zen-space-xl);
 	}
 
+	/* Stats bar — hide dividers on small screens, show on desktop */
+	.stats-bar__divider {
+		display: flex;
+	}
+
 	/* About — side-by-side cards on desktop */
 	.about__features {
 		flex-direction: row;

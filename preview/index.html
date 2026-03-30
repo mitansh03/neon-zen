@@ -3,8 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Neon Zen — The Electric Sanctuary</title>
+	<title>Neon Zen — Yoga Bangalore | The Electric Sanctuary</title>
 	<meta name="description" content="High-intensity Vinyasa fueled by immersive electronic soundscapes. Neon Zen yoga studio, Bangalore.">
+
+	<!-- Syncopate (headings) + Space Mono (mono/labels) — preview only -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="assets/css/variables.css">
 	<link rel="stylesheet" href="assets/css/base.css">
 	<link rel="stylesheet" href="assets/css/sections.css">
@@ -44,28 +50,64 @@
 	<!-- Hero -->
 	<section class="section hero" id="hero">
 		<div class="hero__bg">
-			<img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1200&q=80"
-			     alt="Yoga practitioner in a dimly lit studio"
+			<img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1400&q=80"
+			     alt="Yoga practitioner in a dimly lit neon studio"
 			     class="hero__bg-img"
 			     loading="eager">
 		</div>
 		<div class="hero__overlay"></div>
+		<div class="scanlines" aria-hidden="true"></div>
 		<div class="container hero__inner">
 			<p class="neon-label">The Electric Sanctuary</p>
 			<h1 class="hero__heading">Ignite Your <span class="neon-highlight">Inner</span> Flow</h1>
 			<p class="hero__text">Step into a realm where ancient discipline meets futuristic energy. High-intensity Vinyasa fueled by immersive electronic soundscapes.</p>
 			<div class="hero__actions">
 				<a href="#contact-modal" class="btn btn--primary" data-modal-open>Start Your Journey</a>
-				<a href="#classes" class="btn btn--outline">View Schedule</a>
+				<a href="#classes" class="btn btn--outline">View Classes</a>
 			</div>
 		</div>
 	</section>
+
+	<!-- Stats Bar -->
+	<div class="stats-bar" role="region" aria-label="Studio stats">
+		<div class="container stats-bar__inner">
+			<div class="stats-bar__item">
+				<div class="stats-bar__number-wrap">
+					<span class="stats-bar__number" data-count="200">0</span>
+					<span class="stats-bar__suffix">+</span>
+				</div>
+				<span class="stats-bar__label">Active Members</span>
+			</div>
+			<div class="stats-bar__divider" aria-hidden="true"></div>
+			<div class="stats-bar__item">
+				<div class="stats-bar__number-wrap">
+					<span class="stats-bar__number" data-count="21">0</span>
+				</div>
+				<span class="stats-bar__label">Classes Per Week</span>
+			</div>
+			<div class="stats-bar__divider" aria-hidden="true"></div>
+			<div class="stats-bar__item">
+				<div class="stats-bar__number-wrap">
+					<span class="stats-bar__number" data-count="4">0</span>
+				</div>
+				<span class="stats-bar__label">Expert Instructors</span>
+			</div>
+			<div class="stats-bar__divider" aria-hidden="true"></div>
+			<div class="stats-bar__item">
+				<div class="stats-bar__number-wrap">
+					<span class="stats-bar__number" data-count="98">0</span>
+					<span class="stats-bar__suffix">%</span>
+				</div>
+				<span class="stats-bar__label">Satisfaction Rate</span>
+			</div>
+		</div>
+	</div>
 
 	<!-- About -->
 	<section class="section about" id="about">
 		<div class="container">
 			<div class="about__image reveal reveal--scale">
-				<img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80"
+				<img src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80"
 				     alt="Yoga practitioner meditating in a dimly lit Neon Zen studio"
 				     loading="lazy"
 				     width="1200"
@@ -73,23 +115,28 @@
 			</div>
 
 			<div class="about__content reveal reveal--left">
+				<p class="neon-label">The Philosophy</p>
 				<h2 class="about__heading">Why <span class="neon-highlight">Neon Zen</span>?</h2>
-				<p class="about__text">We've reimagined the yoga experience for the digital age. Neon Zen isn't just a studio; it's a sensory immersion designed to sync your body's rhythm with high-fidelity acoustics.</p>
+				<p class="about__text">We've reimagined the yoga experience for the digital age. Neon Zen isn't just a studio — it's a sensory immersion designed to sync your body's rhythm with high-fidelity acoustics and kinetic light.</p>
 			</div>
 
 			<div class="about__features">
 				<div class="about__card reveal">
-					<div class="about__card-icon" aria-hidden="true">⚡</div>
+					<div class="about__card-icon" aria-hidden="true">
+						<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#CCFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+					</div>
 					<div class="about__card-body">
 						<h3 class="about__card-title">The Fusion</h3>
-						<p class="about__card-text">We combine high-intensity power yoga with rhythmic lighting and electronic soundscapes to induce a state of deep flow twice as fast as traditional practice.</p>
+						<p class="about__card-text">High-intensity power yoga synced with rhythmic lighting and electronic soundscapes to induce deep flow states twice as fast as traditional practice.</p>
 					</div>
 				</div>
 				<div class="about__card reveal">
-					<div class="about__card-icon" aria-hidden="true">🎵</div>
+					<div class="about__card-icon" aria-hidden="true">
+						<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#CCFF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+					</div>
 					<div class="about__card-body">
 						<h3 class="about__card-title">Audio Immersion</h3>
-						<p class="about__card-text">Spatial audio engineering creates a sonic cocoon that allows you to tune out the noise of the city and tune into your breath.</p>
+						<p class="about__card-text">Spatial audio engineering creates a sonic cocoon that lets you tune out the city and tune into your breath — every single session.</p>
 					</div>
 				</div>
 			</div>
@@ -107,8 +154,8 @@
 
 			<div class="classes__grid">
 				<div class="classes__card reveal">
-					<img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80"
-					     alt="Woman in dynamic Electric Vinyasa pose"
+					<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80"
+					     alt="Electric Vinyasa — advanced dynamic yoga class"
 					     class="classes__card-img" loading="lazy" width="600" height="800">
 					<div class="classes__card-overlay"></div>
 					<div class="classes__card-content">
@@ -118,8 +165,8 @@
 				</div>
 
 				<div class="classes__card reveal">
-					<img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=600&q=80"
-					     alt="Person practicing yoga with headphones in studio"
+					<img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80"
+					     alt="Immersive Audio — sound-led yoga experience"
 					     class="classes__card-img" loading="lazy" width="600" height="800">
 					<div class="classes__card-overlay"></div>
 					<div class="classes__card-content">
@@ -130,7 +177,7 @@
 
 				<div class="classes__card reveal">
 					<img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=600&q=80"
-					     alt="Yoga practitioner in heated Bio-Thermal studio"
+					     alt="Bio-Thermal — hot yoga at 98 degrees"
 					     class="classes__card-img" loading="lazy" width="600" height="800">
 					<div class="classes__card-overlay"></div>
 					<div class="classes__card-content">
@@ -140,8 +187,8 @@
 				</div>
 
 				<div class="classes__card reveal">
-					<img src="https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?w=600&q=80"
-					     alt="Peaceful restorative yoga flow in studio"
+					<img src="https://images.unsplash.com/photo-1593810450967-f9c42742e326?w=600&q=80"
+					     alt="Restorative Flow — deep recovery yoga session"
 					     class="classes__card-img" loading="lazy" width="600" height="800">
 					<div class="classes__card-overlay"></div>
 					<div class="classes__card-content">
@@ -262,7 +309,7 @@
 					<p class="testimonials__quote">I walked in skeptical about "electric yoga." Three months later, I've never been stronger or more centered. The soundscapes alone are worth it.</p>
 					<footer class="testimonials__author">
 						<div class="testimonials__avatar">
-							<img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=112&q=80"
+							<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=112&q=80"
 							     alt="Priya Sharma" loading="lazy" width="56" height="56">
 						</div>
 						<div class="testimonials__author-info">
@@ -277,7 +324,7 @@
 					<p class="testimonials__quote">Bio-Thermal changed my relationship with heat training. The instructors push you just enough — you leave feeling like you've unlocked something.</p>
 					<footer class="testimonials__author">
 						<div class="testimonials__avatar">
-							<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=112&q=80"
+							<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=112&q=80"
 							     alt="Arjun Mehta" loading="lazy" width="56" height="56">
 						</div>
 						<div class="testimonials__author-info">
@@ -292,7 +339,7 @@
 					<p class="testimonials__quote">The 6 AM Electric Vinyasa is the best hour of my day. Dark room, deep bass, full intensity. Nothing else in Bangalore comes close.</p>
 					<footer class="testimonials__author">
 						<div class="testimonials__avatar">
-							<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=112&q=80"
+							<img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=112&q=80"
 							     alt="Meera Iyer" loading="lazy" width="56" height="56">
 						</div>
 						<div class="testimonials__author-info">
@@ -313,12 +360,12 @@
 				<p class="contact__text">Join the waitlist for our next high-voltage session. First class is on us.</p>
 				<ul class="contact__details">
 					<li class="contact__detail">
-						<svg class="contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-						<span>123 Vinyasa Blvd, Neon City</span>
+						<svg class="contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+						<span>Indiranagar, Bangalore</span>
 					</li>
 					<li class="contact__detail">
-						<svg class="contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-						<a href="mailto:contact@neonzen.yoga">contact@neonzen.yoga</a>
+						<svg class="contact__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+						<a href="mailto:hello@neonzen.in">hello@neonzen.in</a>
 					</li>
 				</ul>
 			</div>
@@ -327,11 +374,11 @@
 				<form class="contact__form" action="#" method="post">
 					<div class="contact__field">
 						<label for="zen-name" class="contact__label">Your Name</label>
-						<input type="text" id="zen-name" name="zen_name" class="contact__input" placeholder="Alex Flow" required>
+						<input type="text" id="zen-name" name="zen_name" class="contact__input" placeholder="Your name" required autocomplete="name">
 					</div>
 					<div class="contact__field">
-						<label for="zen-email" class="contact__label">Email Address</label>
-						<input type="email" id="zen-email" name="zen_email" class="contact__input" placeholder="alex@neonzen.yoga" required>
+						<label for="zen-phone" class="contact__label">Phone Number</label>
+						<input type="tel" id="zen-phone" name="zen_phone" class="contact__input" placeholder="+91 98765 43210" required autocomplete="tel">
 					</div>
 					<div class="contact__field">
 						<label for="zen-class" class="contact__label">Class Preference</label>
@@ -375,28 +422,28 @@
 				<span class="site-footer__bolt" aria-hidden="true">⚡</span>
 				<span class="site-footer__name">Neon Zen</span>
 			</div>
-			<p class="site-footer__tagline">The intersection of movement, sound, and light. A premium sanctuary for the modern athlete.</p>
-			<p class="site-footer__copy">&copy; 2026 Neon Zen Yoga. Unleash the Electric Flow.</p>
+			<p class="site-footer__tagline">The intersection of movement, sound, and light. A sanctuary for the modern athlete in Bangalore.</p>
+			<p class="site-footer__copy">&copy; 2026 Neon Zen Yoga Studio. All rights reserved.</p>
 		</div>
 
 		<div class="site-footer__col">
 			<h4 class="site-footer__heading">Location</h4>
-			<p class="site-footer__text">123 Vinyasa Blvd, Neon City</p>
-			<p class="site-footer__text"><a href="tel:+15559642936">+1 (555) 964-2-ZEN</a></p>
+			<p class="site-footer__text">Indiranagar, Bangalore</p>
+			<p class="site-footer__text"><a href="mailto:hello@neonzen.in">hello@neonzen.in</a></p>
 		</div>
 
 		<div class="site-footer__col">
 			<h4 class="site-footer__heading">Connect</h4>
-			<p class="site-footer__text"><a href="mailto:contact@neonzen.yoga">contact@neonzen.yoga</a></p>
+			<p class="site-footer__text"><a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></p>
 			<div class="site-footer__social">
-				<a href="#" class="site-footer__social-link" aria-label="Podcast">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+				<a href="#" class="site-footer__social-link" aria-label="Instagram">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
 				</a>
-				<a href="#" class="site-footer__social-link" aria-label="Audio">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+				<a href="#" class="site-footer__social-link" aria-label="YouTube">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
 				</a>
-				<a href="#" class="site-footer__social-link" aria-label="Website">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+				<a href="#" class="site-footer__social-link" aria-label="Spotify">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 11.973c2.5-1.473 5.5-.973 7.5.527"></path><path d="M9 15c1.5-1 4-1 5 .5"></path><path d="M7 9c2-1 6-2 9 .5"></path></svg>
 				</a>
 			</div>
 		</div>
@@ -407,7 +454,7 @@
 <div class="modal" id="contact-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-heading">
 	<div class="modal__backdrop" data-modal-close></div>
 	<div class="modal__content">
-		<button class="modal__close" data-modal-close aria-label="Close">
+		<button class="modal__close" data-modal-close aria-label="Close modal">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
 		</button>
 		<div class="modal__header">
@@ -418,11 +465,11 @@
 		<form class="contact__form" action="#" method="post">
 			<div class="contact__field">
 				<label for="modal-name" class="contact__label">Your Name</label>
-				<input type="text" id="modal-name" name="zen_name" class="contact__input" placeholder="Alex Flow" required>
+				<input type="text" id="modal-name" name="zen_name" class="contact__input" placeholder="Your name" required autocomplete="name">
 			</div>
 			<div class="contact__field">
-				<label for="modal-email" class="contact__label">Email Address</label>
-				<input type="email" id="modal-email" name="zen_email" class="contact__input" placeholder="alex@neonzen.yoga" required>
+				<label for="modal-phone" class="contact__label">Phone Number</label>
+				<input type="tel" id="modal-phone" name="zen_phone" class="contact__input" placeholder="+91 98765 43210" required autocomplete="tel">
 			</div>
 			<div class="contact__field">
 				<label for="modal-class" class="contact__label">Class Preference</label>
@@ -445,7 +492,7 @@
    target="_blank"
    rel="noopener noreferrer"
    aria-label="Chat on WhatsApp">
-	<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#fff">
+	<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
 		<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
 	</svg>
 </a>

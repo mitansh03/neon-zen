@@ -32,13 +32,14 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.05;
 	color: var(--zen-color-white);
 	text-transform: uppercase;
-	font-style: italic;
+	letter-spacing: 0.05em;
 }
 
-h1 { font-size: var(--zen-font-size-hero); }
-h2 { font-size: var(--zen-font-size-3xl); }
-h3 { font-size: var(--zen-font-size-2xl); }
-h4 { font-size: var(--zen-font-size-xl); }
+/* Syncopate doesn't have italic — remove italic from headings globally */
+h1 { font-size: var(--zen-font-size-hero); font-style: normal; }
+h2 { font-size: var(--zen-font-size-3xl); font-style: normal; }
+h3 { font-size: var(--zen-font-size-2xl); font-style: normal; }
+h4 { font-size: var(--zen-font-size-xl);  font-style: normal; }
 
 p {
 	margin-bottom: var(--zen-space-sm);
@@ -104,13 +105,13 @@ ul, ol {
 	margin-top: var(--zen-space-xs);
 }
 
-/* Neon label (used for subheadings like "THE ELECTRIC SANCTUARY") */
+/* Neon label */
 .neon-label {
-	font-family: var(--zen-font-body);
+	font-family: var(--zen-font-mono);
 	font-size: var(--zen-font-size-xs);
-	font-weight: 600;
+	font-weight: 400;
 	text-transform: uppercase;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.25em;
 	color: var(--zen-color-neon);
 	margin-bottom: var(--zen-space-sm);
 }
@@ -123,6 +124,31 @@ ul, ol {
 	display: inline;
 }
 
+/* ---- Badge — shadcn-style ---- */
+.badge {
+	display: inline-flex;
+	align-items: center;
+	font-family: var(--zen-font-mono);
+	font-size: 0.65rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	padding: 0.15rem 0.65rem;
+	border-radius: var(--zen-radius-full);
+	border: 1px solid transparent;
+}
+
+.badge--neon {
+	background-color: var(--zen-color-neon);
+	color: var(--zen-color-dark);
+}
+
+.badge--outline {
+	border-color: var(--zen-color-neon);
+	color: var(--zen-color-neon);
+	background-color: transparent;
+}
+
 /* Button base */
 .btn {
 	display: inline-flex;
@@ -130,16 +156,18 @@ ul, ol {
 	justify-content: center;
 	gap: 0.5rem;
 	padding: 1rem 2.5rem;
-	font-family: var(--zen-font-body);
-	font-size: var(--zen-font-size-base);
+	font-family: var(--zen-font-mono);
+	font-size: var(--zen-font-size-sm);
 	font-weight: 700;
 	text-transform: uppercase;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.1em;
 	border: none;
-	border-radius: var(--zen-radius-lg);
+	border-radius: var(--zen-radius-md);
 	cursor: pointer;
 	transition: all var(--zen-transition);
 	text-decoration: none;
+	position: relative;
+	overflow: hidden;
 }
 
 .btn--primary {
@@ -147,120 +175,19 @@ ul, ol {
 	color: var(--zen-color-dark);
 }
 
+.btn--primary::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(255, 255, 255, 0);
+	transition: background 0.3s ease;
+}
+
 .btn--primary:hover {
 	background-color: var(--zen-color-neon-hover);
 	color: var(--zen-color-dark);
 	transform: translateY(-2px);
-}
-
-.btn--outline {
-	background-color: transparent;
-	color: var(--zen-color-white);
-	border: 2px solid var(--zen-color-white);
-}
-
-.btn--outline:hover {
-	background-color: var(--zen-color-white);
-	color: var(--zen-color-dark);
-}
-
-/* WhatsApp floating button */
-.whatsapp-float {
-	position: fixed;
-	bottom: 1.5rem;
-	right: 1.5rem;
-	z-index: 1000;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 56px;
-	height: 56px;
-	background-color: var(--zen-color-whatsapp);
-	border-radius: var(--zen-radius-full);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-	transition: transform var(--zen-transition), box-shadow var(--zen-transition);
-}
-
-.whatsapp-float:hover {
-	transform: scale(1.1);
-	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* ==========================================================================
-   ANIMATION SYSTEM — Neon Zen
-   ========================================================================== */
-
-/* ---------- Scroll Reveal — Base + Variants ---------- */
-.reveal {
-	opacity: 0;
-	transform: translateY(40px);
-	transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-	            transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal--left {
-	transform: translateX(-60px) translateY(0);
-}
-
-.reveal--right {
-	transform: translateX(60px) translateY(0);
-}
-
-.reveal--scale {
-	transform: scale(0.9) translateY(0);
-}
-
-.reveal--fade {
-	transform: none;
-}
-
-.reveal.is-visible {
-	opacity: 1;
-	transform: translateY(0) translateX(0) scale(1);
-}
-
-/* Stagger children: each sibling .reveal delays slightly more */
-.reveal.is-visible:nth-child(2) { transition-delay: 0.1s; }
-.reveal.is-visible:nth-child(3) { transition-delay: 0.2s; }
-.reveal.is-visible:nth-child(4) { transition-delay: 0.3s; }
-.reveal.is-visible:nth-child(5) { transition-delay: 0.4s; }
-.reveal.is-visible:nth-child(6) { transition-delay: 0.5s; }
-.reveal.is-visible:nth-child(7) { transition-delay: 0.6s; }
-
-/* ---------- Neon Glow Pulse — Reusable ---------- */
-@keyframes neon-glow {
-	0%, 100% { text-shadow: 0 0 8px rgba(204, 255, 0, 0.4); }
-	50% { text-shadow: 0 0 20px rgba(204, 255, 0, 0.7), 0 0 40px rgba(204, 255, 0, 0.3); }
-}
-
-.neon-label {
-	animation: neon-glow 3s ease-in-out infinite;
-}
-
-/* ---------- Neon Flicker — Used on Hero Highlight ---------- */
-@keyframes neon-flicker {
-	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-		text-shadow: 0 0 8px rgba(204, 255, 0, 0.6),
-		             0 0 20px rgba(204, 255, 0, 0.4),
-		             0 0 40px rgba(204, 255, 0, 0.2);
-		opacity: 1;
-	}
-	20%, 24%, 55% {
-		text-shadow: none;
-		opacity: 0.8;
-	}
-}
-
-.neon-highlight {
-	animation: neon-flicker 4s ease-in-out 1.5s 1;
-}
-
-/* ---------- Button Animations ---------- */
-
-/* Primary button glow on hover */
-.btn--primary {
-	position: relative;
-	overflow: hidden;
+	box-shadow: var(--zen-glow-btn);
 }
 
 .btn--primary::after {
@@ -281,46 +208,160 @@ ul, ol {
 	height: 300px;
 }
 
-.btn--primary:hover {
-	box-shadow: 0 0 25px rgba(204, 255, 0, 0.4), 0 4px 20px rgba(0, 0, 0, 0.4);
+.btn--outline {
+	background-color: transparent;
+	color: var(--zen-color-white);
+	border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Outline button neon border glow */
 .btn--outline:hover {
-	box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+	background-color: rgba(255, 255, 255, 0.05);
+	border-color: var(--zen-color-white);
+	color: var(--zen-color-white);
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
 }
 
-/* ---------- Card Hover Effects ---------- */
-.about__card,
-.testimonials__card,
-.schedule__slot {
-	transition: transform var(--zen-transition), border-color var(--zen-transition), box-shadow var(--zen-transition);
+.btn--lg {
+	padding: 1.15rem 3rem;
+	font-size: var(--zen-font-size-base);
 }
 
-.about__card:hover,
-.testimonials__card:hover {
-	transform: translateY(-6px);
-	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(204, 255, 0, 0.05);
+/* WhatsApp floating button */
+.whatsapp-float {
+	position: fixed;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	background-color: var(--zen-color-whatsapp);
+	border-radius: var(--zen-radius-full);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	transition: transform var(--zen-transition), box-shadow var(--zen-transition);
+	cursor: pointer;
 }
 
-/* Classes card — image zoom + neon border flash */
-.classes__card::after {
-	content: '';
+.whatsapp-float:hover {
+	transform: scale(1.1);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   ANIMATION SYSTEM — Neon Zen + Cyberpunk FX
+   ========================================================================== */
+
+/* ---------- Scroll Reveal — Base + Variants ---------- */
+.reveal {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+	            transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal--left  { transform: translateX(-60px); }
+.reveal--right { transform: translateX(60px); }
+.reveal--scale { transform: scale(0.9); }
+.reveal--fade  { transform: none; }
+
+.reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger siblings */
+.reveal.is-visible:nth-child(2) { transition-delay: 0.1s; }
+.reveal.is-visible:nth-child(3) { transition-delay: 0.2s; }
+.reveal.is-visible:nth-child(4) { transition-delay: 0.3s; }
+.reveal.is-visible:nth-child(5) { transition-delay: 0.4s; }
+.reveal.is-visible:nth-child(6) { transition-delay: 0.5s; }
+.reveal.is-visible:nth-child(7) { transition-delay: 0.6s; }
+
+/* ---------- Neon Glow Pulse ---------- */
+@keyframes neon-glow {
+	0%, 100% { text-shadow: var(--zen-glow-xs); }
+	50%       { text-shadow: var(--zen-glow-sm); }
+}
+
+.neon-label {
+	animation: neon-glow 3s ease-in-out infinite;
+}
+
+/* ---------- Neon Flicker — Hero Highlight ---------- */
+@keyframes neon-flicker {
+	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+		text-shadow: var(--zen-glow-sm);
+		opacity: 1;
+	}
+	20%, 24%, 55% {
+		text-shadow: none;
+		opacity: 0.8;
+	}
+}
+
+.neon-highlight {
+	animation: neon-flicker 4s ease-in-out 1.5s 1;
+}
+
+/* ---------- Glitch — Logo brand name ---------- */
+@keyframes glitch {
+	0%, 92%, 100% {
+		transform: none;
+		text-shadow: none;
+	}
+	93% {
+		transform: translateX(-2px);
+		text-shadow: 2px 0 var(--zen-glitch-color-a);
+	}
+	94% {
+		transform: translateX(2px);
+		text-shadow: -2px 0 var(--zen-glitch-color-b);
+	}
+	95% {
+		transform: none;
+		text-shadow: none;
+	}
+	96% {
+		transform: translateX(-1px) skewX(-1deg);
+		text-shadow: 1px 0 var(--zen-glitch-color-a);
+	}
+	97% {
+		transform: translateX(1px) skewX(1deg);
+		text-shadow: -1px 0 var(--zen-glitch-color-b);
+	}
+	98% {
+		transform: none;
+		text-shadow: none;
+	}
+}
+
+.site-header__brand-name {
+	animation: glitch 9s ease-in-out infinite;
+}
+
+/* ---------- Scanlines Overlay ---------- */
+.scanlines {
+	pointer-events: none;
 	position: absolute;
 	inset: 0;
-	border: 2px solid transparent;
-	border-radius: var(--zen-radius-md);
-	transition: border-color 0.4s ease;
-	pointer-events: none;
-	z-index: 2;
+	z-index: 3;
+	background: repeating-linear-gradient(
+		to bottom,
+		transparent 0px,
+		transparent calc(var(--zen-scanline-size) - 1px),
+		rgba(0, 0, 0, var(--zen-scanline-opacity)) calc(var(--zen-scanline-size) - 1px),
+		rgba(0, 0, 0, var(--zen-scanline-opacity)) var(--zen-scanline-size)
+	);
 }
 
-.classes__card:hover::after {
-	border-color: rgba(204, 255, 0, 0.4);
-}
-
-.classes__card:hover .classes__card-label {
-	text-shadow: 0 0 10px rgba(204, 255, 0, 0.6);
+/* ---------- Neon Grid Background ---------- */
+.neon-grid-bg {
+	background-image:
+		linear-gradient(rgba(204, 255, 0, var(--zen-grid-opacity)) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(204, 255, 0, var(--zen-grid-opacity)) 1px, transparent 1px);
+	background-size: var(--zen-grid-size) var(--zen-grid-size);
 }
 
 /* ---------- Section Heading Underline ---------- */
@@ -328,35 +369,33 @@ ul, ol {
 	content: '';
 	display: block;
 	width: 0;
-	height: 3px;
-	background-color: var(--zen-color-neon);
+	height: 2px;
+	background: linear-gradient(90deg, var(--zen-color-neon), transparent);
 	margin: var(--zen-space-sm) auto 0;
-	border-radius: 2px;
-	box-shadow: 0 0 10px rgba(204, 255, 0, 0.4);
+	box-shadow: var(--zen-glow-xs);
 	transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
 }
 
-/* Animate underline width when parent .reveal is visible */
-.reveal.is-visible h2::after,
-.section__heading h2::after {
-	width: 60px;
+.section__heading.is-visible h2::after,
+.reveal.is-visible h2::after {
+	width: 80px;
 }
 
 /* ---------- Header Scroll Effect ---------- */
 .site-header {
-	transition: background-color 0.4s ease, box-shadow 0.4s ease, height 0.4s ease;
+	transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .site-header.is-scrolled {
 	background-color: rgba(10, 10, 10, 0.97);
-	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(204, 255, 0, 0.08);
+	box-shadow: 0 1px 0 var(--zen-color-border-neon), 0 2px 20px rgba(0, 0, 0, 0.6);
 }
 
-/* ---------- WhatsApp Button Pulse ---------- */
+/* ---------- WhatsApp Pulse ---------- */
 @keyframes wa-pulse {
-	0% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(37, 211, 102, 0.4); }
-	70% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 12px rgba(37, 211, 102, 0); }
-	100% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(37, 211, 102, 0); }
+	0%   { box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 0 0 0   rgba(37,211,102,0.4); }
+	70%  { box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 0 0 12px rgba(37,211,102,0); }
+	100% { box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 0 0 0   rgba(37,211,102,0); }
 }
 
 .whatsapp-float {
@@ -377,13 +416,51 @@ ul, ol {
 	transform: translateY(0) scale(1);
 }
 
+/* ---------- Card Hover Effects ---------- */
+.about__card,
+.testimonials__card {
+	transition: transform var(--zen-transition),
+	            border-color var(--zen-transition),
+	            box-shadow var(--zen-transition);
+}
+
+.about__card:hover {
+	transform: translateY(-4px);
+	border-color: var(--zen-color-border-neon);
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), var(--zen-glow-xs);
+}
+
+.testimonials__card:hover {
+	transform: translateY(-4px);
+	border-color: var(--zen-color-border-neon);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), var(--zen-glow-xs);
+}
+
+/* Classes card — image zoom + neon border */
+.classes__card::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border: 1px solid transparent;
+	border-radius: var(--zen-radius-md);
+	transition: border-color 0.4s ease, box-shadow 0.4s ease;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.classes__card:hover::after {
+	border-color: var(--zen-color-border-neon);
+	box-shadow: inset 0 0 20px rgba(204, 255, 0, 0.05);
+}
+
 /* ---------- Schedule Day Hover ---------- */
 .schedule__day {
-	transition: background-color var(--zen-transition);
+	transition: background-color var(--zen-transition), box-shadow var(--zen-transition);
 }
 
 .schedule__day:hover {
-	background-color: rgba(204, 255, 0, 0.03);
+	background-color: rgba(204, 255, 0, 0.025);
+	box-shadow: inset 3px 0 0 rgba(204, 255, 0, 0.4);
 }
 
 /* ---------- Respect Reduced Motion ---------- */
